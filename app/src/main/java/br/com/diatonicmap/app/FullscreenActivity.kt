@@ -1,224 +1,78 @@
 package br.com.diatonicmap.app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
-import android.view.MotionEvent
 import android.view.View
+import android.view.Window.FEATURE_NO_TITLE
 import android.view.WindowManager
+import android.webkit.CookieManager
 import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.samples.quickstart.analytics.AnalyticsApplication
 
-
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 
 class FullscreenActivity : AppCompatActivity() {
+
     private lateinit var webView: WebView
-    //private lateinit var fullscreenContent: TextView
-    //private lateinit var fullscreenContentControls: LinearLayout
-    //private val hideHandler = Handler()
+    private lateinit var mTracker: AnalyticsApplication
 
-    @SuppressLint("InlinedApi")
-    private val hidePart2Runnable = Runnable {
-        // Delayed removal of status and navigation bar
+    //private var myUrl: String = "http://192.168.0.17:8080/app.html"
+    //private var myUrl: String ="https://diatonicmap.com.br/app.html"
 
-        // Note that some of these constants are new as of API 16 (Jelly Bean)
-        // and API 19 (KitKat). It is safe to use them, as they are inlined
-        // at compile-time and do nothing on earlier devices.
+    private var myUrl: String = "file:///android_asset/app.html"
 
-        //fullscreenContent.systemUiVisibility =
-        //        View.SYSTEM_UI_FLAG_LOW_PROFILE or
-        //                View.SYSTEM_UI_FLAG_FULLSCREEN or
-        //                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-        //                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-        //               View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-        //                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-    }
-    private val showPart2Runnable = Runnable {
-        // Delayed display of UI elements
-        //supportActionBar?.show()
-        //fullscreenContentControls.visibility = View.VISIBLE
-    }
-    private var isFullscreen: Boolean = false
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    private val hideRunnable = Runnable { hide() }
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    private val delayHideTouchListener = View.OnTouchListener { view, motionEvent ->
-        when (motionEvent.action) {
-            MotionEvent.ACTION_DOWN -> if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS)
-            }
-            MotionEvent.ACTION_UP -> view.performClick()
-            else -> {
-            }
+        mTracker = AnalyticsApplication(this)
+        //mTracker.sendInitAnalytics(this)
+
+        requestWindowFeature(FEATURE_NO_TITLE)
+        setContentView(R.layout.activity_fullscreen)
+
+        webView = findViewById(R.id.webview)
+
+        webView.settings.javaScriptEnabled = true
+        webView.settings.loadWithOverviewMode = true
+        webView.settings.useWideViewPort = true
+        webView.settings.domStorageEnabled = true
+
+
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
+        } else {
+            CookieManager.getInstance().setAcceptCookie(true)
         }
-        false
+        webView.settings.displayZoomControls = false
+        webView.settings.builtInZoomControls = true
+        webView.settings.setSupportZoom(true)
+
+        hideSystemUI()
+
+        if (savedInstanceState != null) {
+            webView.restoreState(savedInstanceState)
+        } else {
+            webView.loadUrl(myUrl)
+        }
     }
+
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
     }
 
+    @Suppress("DEPRECATION")
     private fun hideSystemUI() {
-        // Enables regular immersive mode.
-        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
-        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-                // Set the content to appear under the system bars so that the
-                // content doesn't resize when the system bars hide and show.
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                // Hide the nav bar and status bar
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN)
-    }
-
-    // Shows the system bars by removing all the flags
-    // except for the ones that make the content appear under the system bars.
-    private fun showSystemUI() {
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
-    }
-    @SuppressLint("ClickableViewAccessibility")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        isFullscreen = true;
-
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-
-
-        setContentView(R.layout.activity_fullscreen)
-        webView = findViewById(R.id.webview)
-        webView.settings.javaScriptEnabled = true;
-        //webView.settings.loadWithOverviewMode = true;
-        webView.settings.useWideViewPort = true;
-
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setSupportZoom(true);
-        webView.settings.domStorageEnabled = true;
-
         webView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-
-        webView.webViewClient = object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-                if (url != null) {
-                    view?.loadUrl(url)
-                }
-                return true
-            }
-        }
-        //webView.loadUrl("https://www.diatonicmap.com.br/")
-        webView.loadUrl("https://diatonicmap.com.br/app.html")
-    }
-
-/*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_fullscreen)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        isFullscreen = true
-
-        // Set up the user interaction to manually show or hide the system UI.
-        fullscreenContent = findViewById(R.id.fullscreen_content)
-        fullscreenContent.setOnClickListener { toggle() }
-
-        fullscreenContentControls = findViewById(R.id.fullscreen_content_controls)
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        findViewById<Button>(R.id.dummy_button).setOnTouchListener(delayHideTouchListener)
-    }
-*/
-
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100)
-    }
-
-    private fun toggle() {
-        if (isFullscreen) {
-            hide()
-        } else {
-            show()
-        }
-    }
-
-    private fun hide() {
-        // Hide UI first
-        //supportActionBar?.hide()
-        //fullscreenContentControls.visibility = View.GONE
-        //isFullscreen = false
-
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        //hideHandler.removeCallbacks(showPart2Runnable)
-        //hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    private fun show() {
-        // Show the system bar
-        //fullscreenContent.systemUiVisibility =
-        //        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-        //                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        //isFullscreen = true
-
-        // Schedule a runnable to display UI elements after a delay
-        //hideHandler.removeCallbacks(hidePart2Runnable)
-        //hideHandler.postDelayed(showPart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-
-    /**
-     * Schedules a call to hide() in [delayMillis], canceling any
-     * previously scheduled calls.
-     */
-
-    private fun delayedHide(delayMillis: Int) {
-        //hideHandler.removeCallbacks(hideRunnable)
-        //hideHandler.postDelayed(hideRunnable, delayMillis.toLong())
-    }
-
-    companion object {
-        /**
-         * Whether or not the system UI should be auto-hidden after
-         * [AUTO_HIDE_DELAY_MILLIS] milliseconds.
-         */
-        private const val AUTO_HIDE = true
-
-        /**
-         * If [AUTO_HIDE] is set, the number of milliseconds to wait after
-         * user interaction before hiding the system UI.
-         */
-        private const val AUTO_HIDE_DELAY_MILLIS = 3000
-
-        /**
-         * Some older devices needs a small delay between UI widget updates
-         * and a change of the status and navigation bar.
-         */
-        private const val UI_ANIMATION_DELAY = 300
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
     }
 }
+

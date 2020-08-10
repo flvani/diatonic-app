@@ -1,0 +1,44 @@
+X:1030
+%%barnumbers 0
+%%papersize A4
+%%landscape
+%%pagenumbering
+%%tabinferenceopts +2
+%%restsintab
+T:J'ai vu le loup, le renard et la belette
+T:Eu vi o lobo, a raposa e a doninha
+C:Folclore Francês
+F:https://www.youtube-nocookie.com/embed/P_GFRtgCCmA&T:Aprendiz;
+F:https://www.youtube-nocookie.com/embed/pUp3zd_OR00&T:Demonstração;
+N:Mapa para Acordeões Diatônicos powered by ABCXJS.
+Z:Flávio Vani
+Q:"Allegro" 1/4=150
+L:1/8
+M:2/4
+K:C
+V:melodia treble
+|: "C" c2 BA | "G" G2 AB | cB cd | "C" e2 c2  | c2 BA | "F" G2 AB | "G" c2 d2 | "C" c2 z2 :| 
+w:J'ai vu le loup la re-nard et la ba-let-te. J'ai vu le loup, la re-nard dan-ser!
+|: "C" c2 d2 | "F" e2 f2 | "G" e2 d2 | "C" e2 z2 | c2 BA |1 "F" G2 GG | "G" A2 AB | "C" c2  G2 :|2 "F"G2 AB | "G"c2 d2 | "C"c2 z2 | 
+w:Je les | ai vus | taper des | mains! J'ai vu le | loup, la re- | nard et~la ba-let-te. | loup, la re-nard dan-ser!
+V:2 bass
+|: C,,2 [C,E,G,] z | G,,2 [G,B,D]2 | G,,2 [G,B,D]2 | C,,2 [C,E,G,]2 | C,,2 [C,E,G,] z | F,,2 [F,A,C]2 | G,,2 [G,B,D]2 | C,,2 [C,E,G,]2 :| 
+|: C,,2 [C,E,G,]2 | F,,2 [F,A,C]2 | G,,2 [G,B,D]2 | C,,2 [C,E,G,]2 | C,,2 [C,E,G,] z |1 F,,2 [F,A,C]2 | G,,2 [G,B,D]2 | C,,2 [C,E,G,]2  :|2 F,,2 [F,A,C]2 | G,,2 [G,B,D]2 | C,,2 [C,E,G,]2 | 
+V:tablatura accordionTab
+|: C+6'2 c+7 z-7 | G-5'2 g-7 >-6' | G-8 >-6' g-8 >-7' | C+7'2 c+6'2 | C+6'2 c+7 z-7 | F-5'2 f-7 >-6' | G-82 g-7'2 | C+6'2 c+z2 :|
+|: C+6'2 c+82 | F-92 f-8'2 | G-92 g-7'2 | C+7'2 c+z2 | C+6'2 c+7 z-7 |1 F-5'2 f-5' >-5' | G-72 g-7 >-6' | C+6'2 c+5'2 :|2 F-5'2 f-7 >-6' | G-82 g-7'2 | C+6'2 c+z2 |
+W:
+W:  /: J’ai vu le loup, le renard et la belette.
+W:     J’ai vu le loup, le renard danser! :/
+W:
+W: Je les ai vus taper des mains!
+W: J’ai vu le loup, le renard et la belette. 
+W: Je les ai vus taper des mains!
+W: J’ai vu le loup, le renard danser! 
+W:
+W:/: CHORUS :/
+W:
+W: Je les ai vus taper des pieds!
+W: J’ai vu le loup, le renard et la belette. 
+W: Je les ai vus taper des pieds!
+W: J’ai vu le loup, le renard danser!
