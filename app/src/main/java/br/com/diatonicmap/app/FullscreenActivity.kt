@@ -6,6 +6,7 @@ import android.view.View
 import android.view.Window.FEATURE_NO_TITLE
 import android.view.WindowManager
 import android.webkit.CookieManager
+import android.webkit.ValueCallback
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.samples.quickstart.analytics.AnalyticsApplication
@@ -14,7 +15,7 @@ import com.google.samples.quickstart.analytics.AnalyticsApplication
 class FullscreenActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
-    private lateinit var mTracker: AnalyticsApplication
+    //private lateinit var mTracker: AnalyticsApplication
 
     //private var myUrl: String = "http://192.168.0.17:8080/app.html"
     //private var myUrl: String ="https://diatonicmap.com.br/app.html"
@@ -26,9 +27,6 @@ class FullscreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-
-        mTracker = AnalyticsApplication(this)
-        //mTracker.sendInitAnalytics(this)
 
         requestWindowFeature(FEATURE_NO_TITLE)
         setContentView(R.layout.activity_fullscreen)
@@ -52,6 +50,9 @@ class FullscreenActivity : AppCompatActivity() {
 
         hideSystemUI()
 
+        //val mTracker = AnalyticsApplication(this)
+        //webView.addJavascriptInterface(mTracker, "AnalyticsApplication")
+
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState)
         } else {
@@ -62,6 +63,27 @@ class FullscreenActivity : AppCompatActivity() {
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        webView.evaluateJavascript(
+            "(function() { window.dispatchEvent(onAppResumeEvent); })();",
+            ValueCallback<String?> { })
+    }
+
+    override fun onStop() {
+        super.onStop()
+        webView.evaluateJavascript(
+            "(function() { window.dispatchEvent(onAppStopEvent); })();",
+            ValueCallback<String?> { })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        webView.evaluateJavascript(
+            "(function() { window.dispatchEvent(onAppStopEvent); })();",
+            ValueCallback<String?> { })
     }
 
     @Suppress("DEPRECATION")

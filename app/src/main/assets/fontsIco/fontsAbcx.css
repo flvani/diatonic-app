@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'abcx';
-  src: url('file:///android_asset/fontsIco/abcx.ttf?2835248') format('truetype'),
-       url('file:///android_asset/fontsIco/abcx.svg?2835248#abcx') format('svg');
+  src: url('./abcx.ttf?2835248') format('truetype'),
+       url('./abcx.svg?2835248#abcx') format('svg');
 }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
