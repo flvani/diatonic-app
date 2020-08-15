@@ -2,14 +2,13 @@ package br.com.diatonicmap.app
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.view.Window.FEATURE_NO_TITLE
 import android.view.WindowManager
-import android.webkit.CookieManager
-import android.webkit.ValueCallback
-import android.webkit.WebView
+import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.samples.quickstart.analytics.AnalyticsApplication
+import androidx.webkit.WebViewAssetLoader
 
 
 class FullscreenActivity : AppCompatActivity() {
@@ -19,8 +18,9 @@ class FullscreenActivity : AppCompatActivity() {
 
     //private var myUrl: String = "http://192.168.0.17:8080/app.html"
     //private var myUrl: String ="https://diatonicmap.com.br/app.html"
+    //private var myUrl: String = "file:///android_asset/app.html"
 
-    private var myUrl: String = "file:///android_asset/app.html"
+    private var myUrl: String = "https://appassets.androidplatform.net/assets/app.html"
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,17 +33,31 @@ class FullscreenActivity : AppCompatActivity() {
 
         webView = findViewById(R.id.webview)
 
+        val assetLoader = WebViewAssetLoader.Builder()
+            .addPathHandler("/assets/", WebViewAssetLoader.AssetsPathHandler(this))
+            .addPathHandler("/res/", WebViewAssetLoader.ResourcesPathHandler(this))
+            .build()
+
+        webView.webViewClient = object : WebViewClient() {
+            override fun shouldInterceptRequest(
+                view: WebView,
+                request: WebResourceRequest
+            ): WebResourceResponse? {
+                return assetLoader.shouldInterceptRequest(request.url)
+            }
+        }
+
         webView.settings.javaScriptEnabled = true
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
         webView.settings.domStorageEnabled = true
-
 
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
         } else {
             CookieManager.getInstance().setAcceptCookie(true)
         }
+
         webView.settings.displayZoomControls = false
         webView.settings.builtInZoomControls = true
         webView.settings.setSupportZoom(true)
@@ -85,6 +99,25 @@ class FullscreenActivity : AppCompatActivity() {
             "(function() { window.dispatchEvent(onAppStopEvent); })();",
             ValueCallback<String?> { })
     }
+/* FLÁVIO aqui
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        if (event.getAction() === KeyEvent.ACTION_DOWN) {
+            when (keyCode) {
+                KeyEvent.KEYCODE_BACK -> {
+                    if (webView.canGoBack()) {
+                        webView.goBack()
+                    } else {
+                        finish()
+                    }
+                    return true
+                }
+            }
+        }
+        //return super.onKeyDown(keyCode, event)
+        return true;
+    }
+*/
 
     @Suppress("DEPRECATION")
     private fun hideSystemUI() {

@@ -95,6 +95,7 @@
         ,"PrefsPropsCKPiano": "Akustischen Klavierklängen verwenden"
         ,"PrefsPropsCKShowWarnings": "Kompilierungsfehler und Warnungen anzeigen"
         ,"PrefsPropsCKAutoRefresh": "Automatische Aktualisierung der Partitur (experimentell)"
+        ,"PrefsPropsCKkeyboardAlignRight": "Align keyboard right"
         ,"PrefsApply": "Anwenden"
         ,"PrefsReset": "Zurücksetzen"
         ,"PrefsCancel": "Stornieren"
@@ -174,5 +175,8 @@
         ,"Open": "Open"
         ,"Accordion":"Accordion"
         ,"Song": "Song"
+        ,"AboutAppTitle": "About this application"
+        ,"PrivacyTitle": "Privacy Policy"
+        ,"TermsTitle": "Terms  &amp; Conditions"
     }
 }

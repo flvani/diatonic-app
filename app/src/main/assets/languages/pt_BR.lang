@@ -95,6 +95,7 @@
         ,"PrefsPropsCKPiano": "Usar sons de piano acústico"
         ,"PrefsPropsCKShowWarnings": "Mostrar avisos e erros de compilação"
         ,"PrefsPropsCKAutoRefresh": "Atualizar partitura automaticamente (experimental)"
+        ,"PrefsPropsCKkeyboardAlignRight": "Alinhar teclado à direita"
         ,"PrefsApply": "Aplicar"
         ,"PrefsReset": "Redefinir"
         ,"PrefsCancel": "Cancelar"
@@ -174,5 +175,8 @@
         ,"Open": "Abrir"
         ,"Accordion":"Acordeão"
         ,"Song": "Música"
+        ,"AboutAppTitle": "Sobre esta aplicação"
+        ,"PrivacyTitle": "Política de privacidade"
+        ,"TermsTitle": "Termos e Condições"
    }
 }
