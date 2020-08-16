@@ -9,18 +9,10 @@ import android.view.WindowManager
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
-import org.json.JSONObject
-
-//import com.google.samples.quickstart.analytics.Analytics
 
 class DiatonicApp : AppCompatActivity() {
 
     private lateinit var webView: WebView
-    //private lateinit var mTracker: Analytics
-
-    //private var myUrl: String = "http://192.168.0.17:8080/app.html"
-    //private var myUrl: String ="https://diatonicmap.com.br/app.html"
-    //private var myUrl: String = "file:///android_asset/app.html"
 
     private var myUrl: String = "https://appassets.androidplatform.net/assets/app.html"
 
@@ -66,21 +58,13 @@ class DiatonicApp : AppCompatActivity() {
 
         hideSystemUI()
 
-        //mTracker = Analytics(this)
-        //mTracker.startAnalytics()
-
-        webView.addJavascriptInterface(this, "CloseMe")
+        webView.addJavascriptInterface(this, "DiatonicApp")
 
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState)
         } else {
             webView.loadUrl(myUrl)
         }
-    }
-
-    @JavascriptInterface
-    fun closeApp() {
-        finish();
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -97,7 +81,6 @@ class DiatonicApp : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        //mTracker.endAnalytics()
         webView.evaluateJavascript(
             "(function() { window.dispatchEvent(onAppStopEvent); })();",
             ValueCallback<String?> { })
@@ -110,17 +93,13 @@ class DiatonicApp : AppCompatActivity() {
             ValueCallback<String?> { })
     }
 
+    @JavascriptInterface
+    fun closeApp() {
+        finish();
+    }
+
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-
-/*
-        webView.evaluateJavascript("(function() { return 'this'; })();", new ValueCallback<String>() {
-            @Override
-            public void onReceiveValue(String s) {
-                Log.d("LogName", s); // Prints: "this"
-            }
-        });
-*/
 
         if (event.getAction() === KeyEvent.ACTION_DOWN) {
             when (keyCode) {
@@ -129,23 +108,12 @@ class DiatonicApp : AppCompatActivity() {
                         "(function() { window.dispatchEvent(onAppBack); })();",
                         ValueCallback<String?> { })
                     return false;
-
-/*
-                    if (webView.canGoBack()) {
-                        }
-                    } else {
-                        finish()
-                    }
-                    return true
-*/
                 }
             }
         }
 
         return super.onKeyDown(keyCode, event)
-        //return true;
     }
-
 
 
     @Suppress("DEPRECATION")
