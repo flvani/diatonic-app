@@ -1,12 +1,17 @@
 package br.com.diatonicmap.app
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.os.CancellationSignal
+import android.os.ParcelFileDescriptor
+import android.print.*
 import android.view.KeyEvent
 import android.view.View
 import android.view.Window.FEATURE_NO_TITLE
 import android.view.WindowManager
 import android.webkit.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
 
@@ -32,51 +37,46 @@ class DiatonicApp : AppCompatActivity() {
             .addPathHandler("/res/", WebViewAssetLoader.ResourcesPathHandler(this))
             .build()
 
-        webView.webViewClient = object : WebViewClient() {
-            override fun shouldInterceptRequest(
-                view: WebView,
-                request: WebResourceRequest
-            ): WebResourceResponse? {
-                return assetLoader.shouldInterceptRequest(request.url)
-            }
-        }
-
-        webView.settings.javaScriptEnabled = true
-        webView.settings.loadWithOverviewMode = true
-        webView.settings.useWideViewPort = true
-        webView.settings.domStorageEnabled = true
-
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
-            CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
-        } else {
-            CookieManager.getInstance().setAcceptCookie(true)
-        }
-
-        webView.settings.displayZoomControls = false
-        webView.settings.builtInZoomControls = true
-        webView.settings.setSupportZoom(true)
-
-        hideSystemUI()
+        this.hideSystemUI()
 
         webView.addJavascriptInterface(this, "DiatonicApp")
 
-        if (savedInstanceState != null) {
-            webView.restoreState(savedInstanceState)
-        } else {
-            webView.loadUrl(myUrl)
+        webView.run {
+
+            settings.javaScriptEnabled = true
+            settings.loadWithOverviewMode = true
+            settings.useWideViewPort = true
+            settings.domStorageEnabled = true
+            settings.displayZoomControls = false
+            settings.builtInZoomControls = true
+            settings.setSupportZoom(true)
+
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
+                CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
+            } else {
+                CookieManager.getInstance().setAcceptCookie(true)
+            }
+
+            webViewClient = object : WebViewClient() {
+                override fun shouldInterceptRequest(
+                    view: WebView,
+                    request: WebResourceRequest
+                ): WebResourceResponse? {
+                    return assetLoader.shouldInterceptRequest(request.url)
+                }
+            }
+
+            if (savedInstanceState != null) {
+                restoreState(savedInstanceState)
+            } else {
+                loadUrl(myUrl)
+            }
         }
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        webView.evaluateJavascript(
-            "(function() { window.dispatchEvent(onAppResumeEvent); })();",
-            ValueCallback<String?> { })
     }
 
     override fun onStop() {
@@ -93,15 +93,9 @@ class DiatonicApp : AppCompatActivity() {
             ValueCallback<String?> { })
     }
 
-    @JavascriptInterface
-    fun closeApp() {
-        finish();
-    }
-
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
 
-        if (event.getAction() === KeyEvent.ACTION_DOWN) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
             when (keyCode) {
                 KeyEvent.KEYCODE_BACK -> {
                     webView.evaluateJavascript(
@@ -115,7 +109,6 @@ class DiatonicApp : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
-
     @Suppress("DEPRECATION")
     private fun hideSystemUI() {
 
@@ -127,5 +120,63 @@ class DiatonicApp : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_FULLSCREEN or
             View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
     }
+
+    @JavascriptInterface
+    fun closeApp() {
+        finish()
+    }
+
+    @JavascriptInterface
+    fun isDebug(): Boolean {
+        return BuildConfig.DEBUG
+    }
+
+    @JavascriptInterface
+    fun printPage(jobName: String) {
+        /*if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            return;*/
+        webView.post {
+            val printManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
+            val printAdapter = PrintDocumentAdapterWrapper(  webView.createPrintDocumentAdapter(jobName), webView )
+            val builder = PrintAttributes.Builder()
+            builder.setMediaSize(PrintAttributes.MediaSize.ISO_A4)
+            val printJob: PrintJob = printManager.print(jobName, printAdapter, builder.build())
+            if (printJob.isCompleted()) {
+                Toast.makeText(applicationContext, R.string.print_complete, Toast.LENGTH_LONG).show()
+            } else if (printJob.isFailed()) {
+                Toast.makeText(applicationContext, R.string.print_failed, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 }
 
+class PrintDocumentAdapterWrapper(private val delegate: PrintDocumentAdapter, private val webview: WebView):  PrintDocumentAdapter() {
+
+    override fun onFinish() {
+        delegate.onFinish()
+        webview.run {
+            evaluateJavascript(
+                "(function() { window.dispatchEvent(onAppEndPreview); })();",
+                ValueCallback<String?> { })
+        }
+    }
+
+    override fun onLayout(
+        p0: PrintAttributes?,
+        p1: PrintAttributes?,
+        p2: CancellationSignal?,
+        p3: LayoutResultCallback?,
+        p4: Bundle?
+    ) {
+        delegate.onLayout(p0,p1,p2,p3,p4)
+    }
+
+    override fun onWrite(
+        p0: Array<out PageRange>?,
+        p1: ParcelFileDescriptor?,
+        p2: CancellationSignal?,
+        p3: WriteResultCallback?
+    ) {
+        delegate.onWrite(p0,p1,p2,p3)
+    }
+}

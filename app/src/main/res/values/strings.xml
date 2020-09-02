@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Diatonic App</string>
+    <string name="print_complete">Impressão concluída com sucesso!</string>
+    <string name="print_failed">Oppss!! Não foi possível imprimir a partitura.</string>
 </resources>
