@@ -25,7 +25,7 @@ android {
         applicationId "br.com.diatonicmap.app"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 4
+        versionCode 5
         versionName '2.0.0'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -48,6 +48,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-analytics:17.0.0'
     implementation 'com.google.gms:google-services:4.3.3'
     implementation 'androidx.webkit:webkit:1.2.0'
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
