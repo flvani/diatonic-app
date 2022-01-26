@@ -14,6 +14,7 @@ import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
+import android.view.inputmethod.InputMethodManager;
 
 class DiatonicApp : AppCompatActivity() {
 
@@ -51,11 +52,7 @@ class DiatonicApp : AppCompatActivity() {
             settings.builtInZoomControls = true
             settings.setSupportZoom(true)
 
-            if (android.os.Build.VERSION.SDK_INT >= 21) {
-                CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
-            } else {
-                CookieManager.getInstance().setAcceptCookie(true)
-            }
+            CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
 
             webViewClient = object : WebViewClient() {
                 override fun shouldInterceptRequest(
@@ -82,26 +79,26 @@ class DiatonicApp : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         webView.evaluateJavascript(
-            "(function() { window.dispatchEvent(onAppStopEvent); })();",
-            ValueCallback<String?> { })
+            "(function() { window.dispatchEvent(onAppStopEvent); })();"
+        ) { }
     }
 
     override fun onPause() {
         super.onPause()
         webView.evaluateJavascript(
-            "(function() { window.dispatchEvent(onAppStopEvent); })();",
-            ValueCallback<String?> { })
+            "(function() { window.dispatchEvent(onAppStopEvent); })();"
+        ) { }
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
 
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+        if (event.action == KeyEvent.ACTION_DOWN) {
             when (keyCode) {
                 KeyEvent.KEYCODE_BACK -> {
                     webView.evaluateJavascript(
-                        "(function() { window.dispatchEvent(onAppBack); })();",
-                        ValueCallback<String?> { })
-                    return false;
+                        "(function() { window.dispatchEvent(onAppBack); })();"
+                    ) { }
+                    return false
                 }
             }
         }
@@ -141,23 +138,23 @@ class DiatonicApp : AppCompatActivity() {
             val builder = PrintAttributes.Builder()
             builder.setMediaSize(PrintAttributes.MediaSize.ISO_A4)
             val printJob: PrintJob = printManager.print(jobName, printAdapter, builder.build())
-            if (printJob.isCompleted()) {
+            if (printJob.isCompleted) {
                 Toast.makeText(applicationContext, R.string.print_complete, Toast.LENGTH_LONG).show()
-            } else if (printJob.isFailed()) {
+            } else if (printJob.isFailed) {
                 Toast.makeText(applicationContext, R.string.print_failed, Toast.LENGTH_LONG).show()
             }
         }
     }
 }
 
-class PrintDocumentAdapterWrapper(private val delegate: PrintDocumentAdapter, private val webview: WebView):  PrintDocumentAdapter() {
+class PrintDocumentAdapterWrapper(private val delegate: PrintDocumentAdapter, private val w: WebView):  PrintDocumentAdapter() {
 
     override fun onFinish() {
         delegate.onFinish()
-        webview.run {
+        w.run {
             evaluateJavascript(
-                "(function() { window.dispatchEvent(onAppEndPreview); })();",
-                ValueCallback<String?> { })
+                "(function() { window.dispatchEvent(onAppEndPreview); })();"
+            ) { }
         }
     }
 

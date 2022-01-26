@@ -1,8 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
+    buildFeatures {
+        viewBinding true
+    }
     signingConfigs {
         release {
             storePassword kotlin_version
@@ -23,7 +26,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 4
-        versionName '1.0.1'
+        versionName '2.0.0'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
