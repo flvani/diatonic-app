@@ -24,27 +24,21 @@ notação abc, tablatura " />
         
         <link rel="stylesheet" href="fontsIco/fontsAbcx.css" />
         <link rel="stylesheet" href="fontsGoogle/fontsGoogle.css" />
-        <link rel="stylesheet" href="css/styles4abcx_6.02-min.css" />
-        <link rel="stylesheet" href="app/libapp_2.0.2-min.css" />
+        <link rel="stylesheet" href="css/styles4abcx_6.10-min.css" />
+        <link rel="stylesheet" href="app/libapp_2.1.0-min.css" />
 
-        <!-- Google Analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62839199-4"></script>
         <script>
 
-            window.GAID = 'UA-62839199-4';
-
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', GAID, 'auto');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
 
         </script>
-        <!-- End Google Analytics -->
         
         <!-- Cookie notice 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&always=1&showNoConsent=1&showPolicyLink=1&blocking=1&remember=180&privacyPage=https%3A%2F%2Fdiatonicmap.com.br%2Fprivacy"></script-->
-        <!--script src="https://www.google.com/cloudprint/client/cpgadget.js"></script-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&always=1&showNoConsent=1&showPolicyLink=1&blocking=1&remember=180&privacyPage=https%3A%2F%2Fdiatonicmap.com.br%2Fprivacy"></script>
+        <script src="https://www.google.com/cloudprint/client/cpgadget.js"></script-->
         
     </head>
     <body>
@@ -60,18 +54,18 @@ notação abc, tablatura " />
         <script type="text/javascript" src="jslib/html5kellycolorpicker.min.js"></script>
         
         <!-- suporte a arquivos -->
-        <script type="text/javascript" src="file/filemanager_6.02-min.js"></script>
+        <script type="text/javascript" src="file/filemanager_6.10-min.js"></script>
         
         <!-- suporte mapas de acordeões -->
-        <script type="text/javascript" src="diatonic/diatonic_6.02-min.js"></script>
+        <script type="text/javascript" src="diatonic/diatonic_6.10-min.js"></script>
         
         <!-- suporte a arquivos ABC -->
-        <script id="mainABCX" type="text/javascript" src="abcxjs/abcxjs_6.02-min.js" ></script>
+        <script id="mainABCX" type="text/javascript" src="abcxjs/abcxjs_6.10-min.js" ></script>
         
         <!-- console personalizada para Javascript -->
         <script type="text/javascript" src="jslib/waterbug.js"></script> 
         
-        <script id="mainSITE" type="text/javascript" src="app/libapp_2.0.2-min.js"></script>
+        <script id="mainSITE" type="text/javascript" src="app/libapp_2.1.0-min.js"></script>
 
         <div id="topBar" class="topBar gradiente" >
             <span data-translate="appName" class="topTitle" style="left: 70px; line-height:63px; font-size: 32px;">Mapa para Acordeões Diatônicos</span>
@@ -107,12 +101,14 @@ notação abc, tablatura " />
                 <button id="backBtn" data-translate="homeTip"><i class="ico-home"></i></button>
                 <button id="showMapBtn" data-translate="showMapTip"><i class="ico-keyboard" ></i></button>
                 <button id="printBtn" data-translate="printPreviewTip" style="display: inline;"><i class="ico-printer"></i></button>
-                <button id="modeBtn" data-translate="modeBtn" ><i class="ico-listening" ></i></button>
                 <button id="tabformatBtn" data-translate="tabformatBtn" ><i class="ico-tabformat" ></i></button>
-                <button id="fingeringBtn" data-translate="fingeringBtn" ><i class="ico-alien-fingering" ></i></button>
-                <button id="timerBtn" data-translate="timerBtn" ><i class="ico-timer-00" ></i></button>
+                <button id="fingeringBtn" data-translate="fingeringBtn" ><i class="ico-alien-fingering2" ></i></button>
+                <button id="lyricsBtn" data-translate="lyricsBtn" ><i class="ico-letter-l" ></i></button>
                 <button id="GClefBtn" data-translate="GClefBtn" ><i class="ico-clef-treble" ></i></button>
                 <button id="FClefBtn" data-translate="FClefBtn" ><i class="ico-clef-bass" ></i></button>
+                <button id="timerBtn" data-translate="timerBtn" ><i class="ico-timer-00" ></i></button>
+                <button style="padding-top:2px" ><div id="tempoSld" data-translate="tempoBtn" ></div></button>
+                <button id="modeBtn" data-translate="modeBtn" ><i class="ico-listening" ></i></button>
             </div>
             <div id="divDidacticPlayControls"  class="btn-subgroup" style="display: none;" >
                 <button id="stepBtn" data-translate="stepBtn" ><i class="ico-play"></i>&#160;</button>
@@ -129,12 +125,11 @@ notação abc, tablatura " />
                 <button id="playBtn" data-translate="playBtn" >&#160;<i class="ico-play"></i>&#160;</button>
                 <button id="stopBtn" data-translate="stopBtn" ><i class="ico-stop"></i></button>
             </div>
-            <div class="btn-subgroup" style="margin-top: -2px;" >
-                <label id="currentPlayTimeLabel" class="playtime-label" >00:00</label>
-                <div id="tempoSld" data-translate="tempoBtn"></div>
+            <div class="btn-subgroup">
+                <label id="currentPlayTimeLabel" class="playtime-label" style="margin-top:-2px;">00:00</label>
             </div>
-            <div class="others-group">
-                    <button id="buttonShowMedia" style="display:none;" >
+            <div class="btn-subgroup">
+                <button id="buttonShowMedia" style="display:none;" >
                     <i class="ico-vplayer"></i>&nbsp;<span id="spanShowMedia" data-translate="showMedia">Videoaula</span>
                 </button>
             </div>
@@ -212,7 +207,11 @@ notação abc, tablatura " />
                 if( ABCXJS.misc.isIE() ){
                     $('#appDiv').hide();
                     
-                    SITE.ga('send', 'event', 'Error', 'browser', 'MS-IE', { nonInteraction: true } );
+                    SITE.ga( 'event', 'browser', { 
+                          'event_category': 'Error'  
+                         ,'event_label': 'MS-IE'
+                         ,'non_interaction': true
+                    });
                     
                     new DRAGGABLE.ui.Alert( 
                          null, null
@@ -256,7 +255,11 @@ notação abc, tablatura " />
                 if(!success) {
                     MIDI.widget.hide();
                     
-                    SITE.ga('send', 'event', 'Error', 'loading', 'resources', { nonInteraction: true } );
+                    SITE.ga( 'event', 'loading', { 
+                          'event_category': 'Error'  
+                         ,'event_label': 'resources'
+                         ,'non_interaction': true
+                    });
                     
                     new DRAGGABLE.ui.Alert( 
                         null, null, 
@@ -306,8 +309,14 @@ notação abc, tablatura " />
                 
                 SITE.debug = window.DiatonicApp && window.DiatonicApp.isDebug();
                 
-                SITE.ga('send', 'pageview');
-                SITE.ga('send', 'event', 'Configuration', 'language', SITE.properties.options.language, { nonInteraction: true } );
+                SITE.ga( 'set', 'page_path', '/app');
+                //SITE.ga( 'event', 'page_view');
+
+                SITE.ga( 'event', 'language', { 
+                          'event_category': 'Configuration'  
+                         ,'event_label': SITE.properties.options.language 
+                         ,'non_interaction': true
+                });
                 
                 if( SITE.getDate() <= 20170909 ) {
                     $('#tipsDiv').fadeIn('slow');
