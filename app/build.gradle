@@ -25,8 +25,8 @@ android {
         applicationId "br.com.diatonicmap.app"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 6
-        versionName '2.1.0'
+        versionCode 7
+        versionName '2.1.13'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
