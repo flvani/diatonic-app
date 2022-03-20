@@ -25,10 +25,10 @@ notação abc, tablatura " />
         <link rel="stylesheet" href="fontsIco/fontsAbcx.css" />
         <link rel="stylesheet" href="fontsGoogle/fontsGoogle.css" />
         <link rel="stylesheet" href="css/styles4abcx_6.13-min.css" />
-        <link rel="stylesheet" href="app/libapp_2.1.13-min.css" />
+        <link rel="stylesheet" href="app/libapp_2.1.14-min.css" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62839199-4"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RXNND5N5Y"></script>
         <script>
 
             window.dataLayer = window.dataLayer || [];
@@ -65,7 +65,7 @@ notação abc, tablatura " />
         <!-- console personalizada para Javascript -->
         <script type="text/javascript" src="jslib/waterbug.js"></script> 
         
-        <script id="mainSITE" type="text/javascript" src="app/libapp_2.1.13-min.js"></script>
+        <script id="mainSITE" type="text/javascript" src="app/libapp_2.1.14-min.js"></script>
 
         <div id="topBar" class="topBar gradiente" >
             <span data-translate="appName" class="topTitle" style="left: 70px; line-height:63px; font-size: 32px;">Mapa para Acordeões Diatônicos</span>
@@ -148,7 +148,12 @@ notação abc, tablatura " />
                 <div id="askHelpBtn" class="pushbutton cancel"><i class="ico-circle-error"></i><span>увольнять</span></div>
             </div>            
         </div>
+
         
+        <!--div id="pg" class="pushbutton-group" style="right: 0; bottom: 50px;">
+            <div id="testeback" class="pushbutton cancel"><i class="ico-circle-error"></i><span>back</span></div>
+        </div-->            
+
         <div id="clustrmaps-widget" style="display: none;">
             <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=n&d=DapUa94TbVqwtpLWEmLGlHZOsJ4sbpinbd-5n9x0hVY&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>        
         </div>
@@ -160,6 +165,7 @@ notação abc, tablatura " />
             
             document.getElementById("aVersion").innerHTML = '<i>Diatonic App '+SITE.siteVersion+' Powered by ABCXJS version '+SITE.abcxVersion+'</i>';
 
+
             var debug=false; // eliminar esta variável assim que possível
             
             var myApp;
@@ -167,6 +173,11 @@ notação abc, tablatura " />
             window.onAppEndPreview = new Event('appEndPreview');
             window.onAppStopEvent = new Event('appStopEvent');
             window.onAppBack = new Event('appBack');
+
+//            document.getElementById('testeback').addEventListener('click', function () {
+//                if( !myApp ) return;
+//                myApp.goBackOrClose();
+//            }, false);
 
             window.addEventListener('afterprint', (event) => {
                 //if( !myApp ) return;

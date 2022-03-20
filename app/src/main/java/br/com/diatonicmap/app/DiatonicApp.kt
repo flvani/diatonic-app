@@ -14,11 +14,11 @@ import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
-import android.view.inputmethod.InputMethodManager;
 
 class DiatonicApp : AppCompatActivity() {
 
     private lateinit var webView: WebView
+    //private var pressedTime: Long = 0
 
     private var myUrl: String = "https://appassets.androidplatform.net/assets/app.html"
 
@@ -90,7 +90,7 @@ class DiatonicApp : AppCompatActivity() {
         ) { }
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
 
         if (event.action == KeyEvent.ACTION_DOWN) {
             when (keyCode) {
@@ -102,9 +102,9 @@ class DiatonicApp : AppCompatActivity() {
                 }
             }
         }
-
         return super.onKeyDown(keyCode, event)
     }
+
 
     @Suppress("DEPRECATION")
     private fun hideSystemUI() {
