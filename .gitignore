@@ -1,6 +1,9 @@
 *.iml
 .gradle
-/local.properties
+build
+release
+.idea
+local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -8,10 +11,9 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
 /captures
 .externalNativeBuild
 .cxx
 /app/release
 /app/build
-app/release/app-release.aab
+/app/release/app-release.aab
