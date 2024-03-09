@@ -5,6 +5,7 @@
    ,"resources" : 
    {
          "appName": "Mapa para Acordeões Diatônicos"
+        ,"oSite": "(o site)"
         ,"TAB2PART": "Tablatura > Partitura"
         ,"ABC2PART": "ABCX > Partitura"
         ,"JUMPS": "Símbolos de Repetição"
@@ -58,6 +59,7 @@
         ,"TUTORIAL": "Vídeo Tutoriais"
         ,"ABOUT": "Sobre"
         ,"chLabel": "Mudar a notação"
+        ,"tabFormat": "Formato da Tablatura"
         ,"wait": "Aguarde..."
         ,"loading": "Carregando..."
         ,"chkShowABCXText": "Mostrar texto ABCX"
@@ -184,10 +186,19 @@
         ,"Accordion":"Acordeão"
         ,"Song": "Música"
         ,"AboutAppTitle": "Sobre esta aplicação"
+        ,"PrivacyDesc": "Utilizamos cookies para melhorar a sua experiência no \"Mapa para Acordeões\".<br>Para saber mais, leia a nossa"
         ,"PrivacyTitle": "Política de privacidade"
+        ,"PrivacyLink": "/privacy/politica.html"
+        ,"GotIt": "Entendi!"
         ,"TermsTitle": "Termos e Condições"
         ,"PrefsPropsChkSuppressTitles": "Suprimir títulos de janelas"
         ,"cookiePrefs":"Clique aqui para redefinir preferências de cookies"
         ,"release":"Notas de Lançamento"
+        ,"Next" : "Próximo"
+        ,"Previous" : "Voltar"
+        ,"Dismiss" : "Dispensar"
+        ,"Start" : "Começar"
+        ,"Finish" : "Terminar"
+        ,"Take a tour": "Faça um Tour"
    }
 }

@@ -5,6 +5,7 @@
     ,"resources" : 
     {
          "appName": "Mapa para Acordeones Diatónicos"
+        ,"oSite": "(el sitio)"
         ,"TAB2PART": "Tablatura > Partitura"
         ,"ABC2PART": "ABCX > Partitura"
         ,"JUMPS": "Signos de repetición (en portugués)"
@@ -58,6 +59,7 @@
         ,"TUTORIAL": "Tutoriales de vídeo (en Portugués)"
         ,"ABOUT": "Acerca"
         ,"chLabel": "Cambiar la notación"
+        ,"tabFormat": "TAB Format"
         ,"wait": "Espere..."
         ,"loading": "Carregando..."
         ,"chkShowABCXText": "Mostrar el texto ABCX"
@@ -180,14 +182,25 @@
         ,"ErrLoadingDescription1": "Por favor, intenta volver a cargar esta página."
         ,"ErrLoadingDescription2": "Si el problema persiste, escriba un e-mail a:"
         ,"ReleaseNotesNotice": "Hay una nueva versión: Vea las notas de lanzamiento."
-        ,"Open": "Open"
-        ,"Accordion":"Accordion"
-        ,"Song": "Song"
-        ,"AboutAppTitle": "About this application"
-        ,"PrivacyTitle": "Privacy Policy"
-        ,"TermsTitle": "Terms  &amp; Conditions"
+        ,"Open": "Abrir"
+        ,"Accordion":"Acordeón"
+        ,"Song": "Canción"
+        ,"AboutAppTitle": "Acerca de esta aplicación"
+        ,"PrivacyDesc": "Utilizamos cookies para mejorar su experiencia en \"Mapa para Acordeones\".<br>Para obtener más información, lea nuestra"
+        ,"PrivacyTitle": "Política de privacidad"
+        ,"PrivacyLink": "/privacy/policy.html"
+        ,"GotIt": "¡Entendido!"
+        ,"TermsTitle": "Términos y Condiciones"
         ,"PrefsPropsChkSuppressTitles": "Suppress window titles"
         ,"cookiePrefs":"Click here to reset cookie preferences"
         ,"release":"Release Notes"
+        ,"Next" : "Seguiente"
+        ,"Previous" : "Anterior"
+        ,"Dismiss" : "Descartar"
+        ,"Start" : "Iniciar"
+        ,"Finish" : "Finalizar"
+        ,"Take a tour": "Hacer un Tour"
+
+
     }
 }

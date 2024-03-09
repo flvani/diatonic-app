@@ -39,7 +39,7 @@
         ,"topSettings": "Settings"
         ,"menuGaitas": "Accordions"
         ,"menuRepertorio": "Repertoire"
-        ,"menuInformacoes": "Informations"
+        ,"menuInformacoes": "Information"
         ,"tabTunes": "Tunes"
         ,"tabChords": "Chords"
         ,"tabPractices": "Practices"
@@ -58,6 +58,7 @@
         ,"TUTORIAL": "Video Tutorials (in Portuguese)"
         ,"ABOUT": "About"
         ,"chLabel": "Change Notation"
+        ,"tabFormat": "TAB Format"
         ,"wait": "Wait..."
         ,"loading": "Loading..."
         ,"chkShowABCXText": "Show ABCX Text"
@@ -189,5 +190,11 @@
         ,"PrefsPropsChkSuppressTitles": "Suppress window titles"
         ,"cookiePrefs":"Click here to reset cookie preferences"
         ,"release":"Release Notes"
+        ,"Next" : "Next"
+        ,"Previous" : "Previous"
+        ,"Dismiss" : "Dismiss"
+        ,"Start" : "Start"
+        ,"Finish" : "Finish"
+        ,"Take a tour": "Take a Tour"
     }
 }

@@ -1,3 +1,101 @@
+X:9017
+%%barnumbers 1
+%%papersize A4
+%barsperstaff 6
+%staffsep 20
+%pagenumbering
+%stretchlast
+%landscape
+%%tabinferenceopts -3
+T:Cumbia Cienaguera
+C:letra: Esteban Montaño
+C:melodia: Andrés Paz Barros
+F:https://www.youtube-nocookie.com/embed/r5mFPpf2RDo
+L:1/8
+Q:1/4=140
+M:4/4
+K:G
+V:1 treble
+| z DFA |: cccc cccc | cccc cccc | c2 B2 G2 AF- | F2 z D- D2 D2 | 
+| F2 C2 E2 B,D- | D D3 F2 A2 | c2 B2 G2 AF- | F2 z D- D2 DF- | F F2 C E2 B,D- | 
+| D D3 F2 A2 |1 c2 B2 G2 AF- | F2 z D2 DFA :|2 c2 B2 G2 AF- | F2 z2 FGAB | 
+V:2 bass
+| z4 |: A,, z [A,CE][A,CE] z2 [A,CE] z | A,, z [A,CE][A,CE] z2 [A,CE] z | A,, z [G,B,D][G,B,D] z2 [D,F,A,] z | D,, z [G,B,D][G,B,D] z2 [G,B,D] z | 
+| D,, z [D,F,A,] [D,F,A,] z2 [G,B,D] z | G,, z [D,F,A,][D,F,A,] z2 [D,F,A,] z | D,, z [G,B,D][G,B,D] z2 [D,F,A,] z | D,, z [G,B,D][G,B,D] z2 [G,B,D] z | D,, z [D,F,A,] [D,F,A,] z2 [G,B,D] z | 
+| G,, z [D,F,A,][D,F,A,] z2 [D,F,A,] z |1 D,, z [G,B,D][G,B,D] z2 [D,F,A,] z | D,, z [G,B,D][G,B,D] z2 [D,F,A,] z :|2  D,, z [G,B,D][G,B,D] z2 [D,F,A,] z | z2 z2 z2 z2 | 
+V:3 accordionTab
+| z+z z+5 z-6 z-7 |: A-8 z-8 am-8 am-8 z-8 z-8 am-8 z-8 | A-8 z-8 am-8 am-8 z-8 z-8 am-8 z-8 | A-8 z-> g+7 g+> z+62 d-7 z-6 | D-> z-> g+z g+5 z+>2 g+5 z+> |
+| D-6 z-> d-4 d-> z-52 g+4 z+5 | G+> z+5 d-> d-> z-62 d-7 z-> | D-8 z-> g+7 g+> z+62 d-7 z-6 | D-> z-> g+z g+5 z+>2 g+5 z-6 | D-> z-6 d-> d-4 z-52 g+4 z+5 |
+| G+> z+5 d-> d-> z-62 d-7 z-> |1 D-8 z-> g+7 g+> z+62 d-7 z-6 | D-> z-> g+z g+5 z+> z+5 d-6 z-7 :|2 D-8 z-> g+7 g+> z+62 d-7 z-6 | z->2 z-z2 z-6 z-5' z-7 z+7 |
+X:1075
+%%barnumbers 1
+%%stretchlast
+%%tabinferenceopts -2
+T:El Humahuaqueño
+R:huayno
+C:Argentina
+C:Tradicional
+Z:Flávio Vani
+M:2/4
+L:1/8
+Q:1/4=90
+K:C
+V:1 treble
+|: e/g/e/d/ e2 | e/g/e/d/ e2 |1 e/g/e/d/ ed | e3 z :|2 e/g/e/d/ eg | a3 g | a3 g |
+| a2 z E |: "F" +segno+ A A/A A/A | c3  B/A/ | "C" G G/G F/A |1 G3 E :|2 G3 z |
+w:* * Lle-gando~está * el carna- * val Quebra- * de-ño,~mi * choli- * ta! Lle-  ta!|
+|: "Am" E E/E "G" D/G | "Am" E E/E  "G" D/G | "Am" E E/E  "G" D/C | "Am" A,3 z :|
+w:Fies-ta de la que-bra-da hu-ma-hua-que-ña pa-ra can-tar!
+w:Er-que, cha-ran-go~y bom-bo, car-na-va-li-to pa-ra bai-lar!
+|: "F" A/A B/c- c | "G" G/GG/ AG | "C" E3 z  +fine+ :|: "Am "E E/E "G" D/G |
+w:Quebra- * de-ño, * hu-mahua-* que- ñi-to! Fies-ta de la que-
+w:Quebra- * de-ño, * hu-mahua-* que- ñi-to! Er-que, cha-ran-go~y
+| "Am" E E/E  "G" D/G | "Am" E E/E  "G" D/C |1 "Am" A,3 z :|2 A,2 z E +dsalfine+|
+w:bra-da hu-ma-hua-que-ña pa-ra can-tar! . .
+w: bom-bo, car-na-va-li-to pa-ra bai- . lar! Lle-
+V:2 bass
+|: z4 | z4 |1 z4 | z4 :|2 z4 | z4 |z4 |
+| z2 z2 |: F,,>[F,A,C] F,,[F,A,C] | F,,>[F,A,C] F,,[F,A,C] | C,,>[C,E,G,] C,,/2 z/ A,, |1 C,,>[C,E,G,] C,,[C,E,G,] :|2 C,,>[C,E,G,] C,,[C,E,G,] |
+|: A,,>[A,CE]  G,,[G,B,D] | A,,>[A,CE]  G,,[G,B,D] | A,,>[A,CE]  G,,[G,B,D] | A,,>[A,CE]  A,,[A,CE] :|
+|: F,,>[F,A,C] F,,[F,A,C] |   G,,>[G,B,D]  G,,[G,B,D] | C,,>[C,E,G,] C,,[C,E,G,]  :|: A,,>[A,CE]  G,,[G,B,D] |
+| A,,>[A,CE]  G,,[G,B,D] |  A,,>[A,CE]  G,,[G,B,D]  |1 A,,>[A,CE]  A,,[A,CE] :|2 A,,>[A,CE]  C,,[C,E,G,] |
+V:3 accordionTab
+|: z-90.5 z-9'0.5 z-90.5 z-7'0.5 z-92 | z-90.5 z-9'0.5 z-90.5 z-7'0.5 z-92 |1 z+7'0.5 z+8'0.5 z+7'0.5 z+80.5 z+7' z+8 | z+7'3 z+z :|2 z+7'0.5 z+8'0.5 z+7'0.5 z+80.5 z+7' z+9 | z-b3 z-9' | z-b3 z-9' |
+| z-b2 z+z z+4' |: F-7 >-70.5 f-70.5 F->0.5 >-70.5 f-7 | F-81.5 f->0.5 F-> f-6'0.5 >-70.5 | C+6 >+60.5 c+60.5 C+>0.5 z-4'0.5 A-7 |1 C+61.5 c+>0.5 C+> c+4' :|2 C+61.5 c+>0.5 C+> c+z |
+|: A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+5' | A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+5' | A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+3' | A-31.5 am->0.5 A-> am-z :|
+|: F-70.5 >-7 f+70.5 F+6' f+> | G+60.5 >+6 g+60.5 G-7 g-5' | C+4'1.5 c+>0.5 C+> c+z :|: A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+5' |
+| A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+5' | A-5 >-50.5 am-50.5 G->0.5 >-3'0.5 g+3' |1 A-31.5 am->0.5 A-> am-z :|2 A-31.5 am->0.5 C+z c+4' |
+X:9019
+%%barnumbers 0
+%%papersize A4
+%barsperstaff 6
+%staffsep 20
+%pagenumbering
+%stretchlast
+%landscape
+%%barnumbers 1
+%%tabinferenceopts +1
+Z:Flávio Vani
+N:Mapa para Acordeões Diatônicos powered by ABCXJS.
+F:https://www.youtube-nocookie.com/embed/c-qljXE3K48
+T:Luna San Juanera
+C:Roberto Calderón
+M:4/4
+L:1/8
+Q:110
+K:C
+V:1 treble
+ z2 G,A, | B,C D[CE] [CE][CE] [EG][CE] | [EG][CE] [EG][CE]2 z2  C | cG EC2 z CD | EF G[FA] [FA][FA] [EG][FA] | 
+| [EG][FA] [EG][FA]2 z2 F | Ac fF2 z DE | FG A[GB] [GB][GB] [FA][GB] | [FA][GB] [FA][GB]2 z [GB][GB] | 
+| [FA][GB] [FA][EG]2 z [FA][FA] | [EG][FA] [EG] [DF]2 z [EG][EG] | [DF][EG] [DF] [CE]2 z2 C | cG EC2 z2 z | 
+V:2 bass
+ z4 | z2 z [C,E,G,] C,, [C,E,G,][C,E,G,] z | z [C,E,G,] z [C,E,G,] C,, [C,E,G,][C,E,G,] z | z [C,E,G,] z [C,E,G,] C,, [C,E,G,][C,E,G,] z | z [F,A,C] z [F,A,C] F,, [F,A,C][F,A,C] z | 
+| z [F,A,C] z [F,A,C] F,, [F,A,C][F,A,C] z | z [F,A,C] z [F,A,C] F,, [F,A,C][F,A,C] z | z [G,B,D] z [G,B,D] G,, [G,B,D][G,B,D] z | z [G,B,D] z [G,B,D] G,, [G,B,D][G,B,D] z | 
+| z [G,B,D] z [C,E,G,] C,, [C,E,G,][F,A,C] z | z [F,A,C]  z [G,B,D] G,, [G,B,D][G,B,D] z | z [G,B,D] z [C,E,G,] C,, [C,E,G,] [C,E,G,] z | z [C,E,G,] z [C,E,G,] C,, [C,E,G,] [C,E,G,] z | 
+V:3 accordionTab
+z+z2 z+3 z-3 | z-2' z-4 z-3' c+[3'4'] C+[3'4'] c+[3'4'] c+[4'5'] z+[3'4'] | z+[4'5'] c+[3'4'] z+[4'5'] c+[3'4'] C+[>>] c+z c+z z+3' | z+6' c+5' z+4' c+3' C+> c+z c+3' z+5 | z+4' f-4' z-5' f-[4'7] F-[4'7] f-[4'7] f-[55'] z-[4'7] |
+| z-[55'] f-[4'7] z-[55'] f-[4'7] F-[>>] f-z f-z z-4' | z-7 f-8 z-8' f-4' F-> f+z f+5 z+4' | z-4' g-5' z-7 g-[5'6'] G-[5'6'] g-[5'6'] g-[4'7] z-[5'6'] | z-[4'7] g-[5'6'] z-[4'7] g-[5'6'] G-[>>] g-z g-[5'6'] z-[5'6'] |
+| z-[4'7] g-[5'6'] z-[4'7] c+[4'5'] C+[>>] c+z f-[4'7] z-[4'7] | z-[55'] f-[4'7] z-[55'] g-[3'4'] G-[>>] g+z g+[4'5'] z+[4'5'] | z-[3'4'] g-[55'] z-[3'4'] c+[3'4'] C+[>>] c+z c+z z+3' | z+6' c+5' z+4' c+3' C+> c+z c+z z-z |
 X:1032
 %%barnumbers 0
 %%papersize a4
@@ -1175,6 +1273,50 @@ W:
 W:/: I tirolesi son bravi soldati! :/
 W:/: Tutte le notte de sentinella
 W:e ciomba la ri la re la e viva l’amor! :/
+X:1074
+%%barnumbers 0
+%%papersize A4
+%barsperstaff 6
+%staffsep 20
+%pagenumbering
+%stretchlast
+%landscape
+%%hidefingering
+%%tabinferenceopts -2
+T:Lamento sertanejo
+C:Dominguinhos (letra:Gilberto Gil)
+C:(<a class="abc_link" href=https://www.facebook.com/groups/toquegaitaponto/?fref=nf target=_blank>arranjo Cezar Ferreira</a>)
+%F:https://www.youtube-nocookie.com/embed/pMD25hLRhDs
+Z:Flávio Vani
+N:Mapa para Acordeões Diatônicos powered by ABCXJS.
+M:2/4
+L:1/8
+Q:140
+K:Am
+V:1 treble
+z4 | e3/2d/2- dc | A4- | A2 ^FA | c3 B | d3 A | c2 A2- | A2 cB | 
+f: 5 5 4 3 2 3 4 5 4 2  3 2 3 2
+w:Por ser * de lá, * do ser-tão, lá do cer-ra-do * Lá do
+| A2 B2 | c2 e2 | a3 f- | (3 f2 a2 c'2 | b2 a2 | g2 f2 | e3 e- | e4 | 
+w:in-te-rior do ma-to, * da caa-tin-ga do ro-ça-do,
+f: 2 4 3 4 5 4 4 5 4 4 3 4  2 2
+| z2 z a | (3 g2 f2 e2 | c2 A2- | A3 c | e d3 | (3 e2 d2 A2 | c2 A2- | A2 z2 | 
+w:eu qua-se não sai-o, * eu qua-se não te-nho ami-gos
+f:5 4 5 4 3 2 3 4 4 4 4 2 3 2
+| (3 A2 c2 e2 | (3 g2 ^f2 e2 | c4 |: ag ^fA | cB BB | dA AA | A4 +dcalfine+ :| 
+f:2 3 4 5 5 4 3 5 4 4 2 3 4 4 4 3 2 2 2 
+w:Eu qua-se que não con-sigo fi-car na ci-da-de sem vi-ver con-tra-ria-do.
+V:2 bass
+z4 | z4 | A,,4 | z4 | F,,4 | G,,3 z | A,,4 | z4 | 
+| A,,4 | E,,4 | F,,4 | z4 | G,,2 A,,2 | G,,4 | C,,4 | z4 | 
+| z4 | G,,4/3 z8/3 | F,,4 | z4 | z D,,3 | z4/3 G,,4/3 z4/3 | A,,4 | z4 | 
+| A,,4 | G,,4/3 z8/3 | F,,4 |: z4 | A,,4 | G,, z3 | A,,4  :| 
+V:3 accordionTab
+z-z4 | z+7'1.5 z+80.5 z+> z+6' | A-74 | z->2 z-6 z-7 | F+6'3 >+7 | G+83 z-7 | A-82 >-72 | z->2 z+6' z+7 |
+| A-72 >-6'2 | E+6'2 >+7'2 | F-b3 >-8' | (3::3 z->2 z-b2 z+9'2 ) | G+a2 A-b2 | G-9'2 >-8'2 | C+7'3 >+7' | z+>4 |
+| z-z2 z-z z-b | (3::3 G-9'2 z-8'2 z+7'2 ) | F-82 >-72 | z->3 z-8 | z-9 D-7'3 | (3::3 z-92 G-7'2 z-72 ) | A-82 >-72 | z->2 z+z2 |
+| (3::3 A-72 >-82 >-92 ) | (3::3 G-9'2 z-a2 z+7'2 ) | F+6'4 |: z-b z-9' z-a z-7 | A-8 >-6' >-6' >-6' | G+8 z-7 z-7 z-7 | A-74 :|
+X:1059
 %%barnumbers 0
 %%papersize A4
 %barsperstaff 6
@@ -1183,7 +1325,6 @@ W:e ciomba la ri la re la e viva l’amor! :/
 %stretchlast
 %landscape
 %hidefingering
-X:1059
 T:Lembranças
 C:Telmo de Lima Freitas
 C:(<a class="abc_link" href=https://www.facebook.com/groups/toquegaitaponto/?fref=nf target=_blank>arranjo Cezar Ferreira</a>)
@@ -1447,6 +1588,7 @@ X:1025
 %%papersize A4
 %%pagenumbering
 %%barsperstaff 4
+%stretchlast
 T:Milonga para as missões 
 C:Gilberto Monteiro
 C:Gravação Renato Borghetti
@@ -1459,30 +1601,28 @@ L:1/16
 Q:80
 K:Am
 V:1 clef=treble
-| z2 c/2d/2e- !fermata!e2d2 |: !segno! c2e2 d2c2 | BedB edBe | BedB edcB | Afec fece | cfec fedc |
-f:3 2 4 2 3 4 2 3 2
-| B[Bd][Bd][Bd]- [Bd]Bcd | edcB edcB |1 A2c/2d/2e- e2d2 :|:2 A[Ee][Ee][Ee] [Ee][Ee][Ee][Ee] | [Ee]EAc fEeE | eEdE eEdE |
-f: ******* | ******** | 3 3 2 4 2 | 3 24  ****** | 24 2 3 4 5 2 4 2   4 2 5 2 4 2 5 2 
+| z2 c/2d/2e- !fermata! e2d2 |: !segno! c2e2 d2c2 | BedB edBe | BedB edcB | Afec fece | cfec fedc |
+f:3 2 4 2 3 4 2 3 2 3 4 2 3 4 2 3 2 3 4 2 3 4 2 3 | 2 3 4 2 3 4 2 3 2 3 4 2 3 4 2 3
+| B[Bd][Bd][Bd]- [Bd]Bcd | edcB edcB |1 A2 c/2d/2e- !fermata! e2d2 :|:2 A[Ee][Ee][Ee] [Ee][Ee][Ee][Ee] | [Ee]EAc fEeE | eEdE eEdE |
+f: 2 24 24 24 3 2 4 3  4 2 3 3 4 2 3 | 2 3 2 4 2  3 24  ****** | 24 2 3 4 5 2 4 2   4 2 5 2 4 2 5 2 
 | eEdE eEdE | eEcE eEcE | eEcE eEcE | e4 z Bcd | edcB edcB :| Aedc BAG^F |
-f: ******** | 5 2 4 2 5 2 4 2 | ******** | 4 3 2 4 3 4 2 3 3 4 2 3 | 3 4 2 3 2 3 2 3
-| FEDC EDCB, | A,B,CD EF^FG | ABcd edcB |  A2c/2d/2e- !fermata! e2d2 !dsalfine! | c2e2 d2c2 | BedB edBe |BedB edcB |  
-%f:2 3 2 3 4 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 4 2 3 2 | 3 3 2 4 2 | 3 4 2 3 2
-f:2 3 2 3 4 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 4 2 3 2 | ***** | 3 4 2 3 2
-%| Afec fece | Afec fedc | B [Bd][Bd][Bd]- [Bd]Bcd !dacoda!| edcB edcB | !dsalcoda! A2c/2d/2e- e2d2 |!coda!  edcB edcB | A4 [EAc]4 | [EAc]8 |
-| Afec fece | cfec fedc | B[Bd][Bd][Bd]- [Bd]Bcd | edcB edcB | A4 [EAc]4 | [EAc]8 !fine!|]
+f: 4 2 5 2 4 2 5 2 | 5 2 4 2 5 2 4 2 | 5 2 4 2 5 2 4 2 | 4 3 2 4 3 4 2 3 3 4 2 3 | 3 4 2 3 2 3 2 3
+| FEDC EDCB, | A,B,CD EF^FG | ABcd edcB | A2 c/2d/2e- !fermata! e2d2 !dsalfine! | c2e2 d2c2 | BedB edBe |BedB edcB |  
+f:2 3 2 3 4 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 4 2 3 2 | ***** | 3 4 2 3 2 3 4 2 3 4 2 3 2 3 4 2 3 4 2 3
+| Afec fece | cfec fedc | B[Bd][Bd][Bd]- [Bd]Bcd | edcB edcB | A4 [EAc]4- | [EAc]8 !fine!|]
+f: 2 3 4 2 3 4 2 3 | 2 3 4 2 3 4 2 3 | 2 24 24 24 3 2 4 | 3 4 2 3 3 4 2 3 | 2 234 
 V:2 bass
 | z8 |: A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,3[A,CE]  A,,2[A,CE]2 | A,,3[A,CE]  A,,2[A,CE]2 |  
 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 |1 A,,3[A,CE]  A,,2[A,CE]2 :|:2 A,,3[A,CE]  A,,2[A,CE]2 |  A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 |
-| E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,3[A,CE]  A,,2[A,CE]2 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 :| z4 z4 |
-| z4 z4 | z4 z4 | z4 z4 | z4 z4 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 |
-%| A,,3[A,CE]  A,,2[A,CE]2 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,4  [A,CE]4- | [A,CE]8 |
+| E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,3[A,CE]  A,,2[A,CE]2 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 :| z8 |
+| z8 | z8 | z8 | z8 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 |
 | A,,3[A,CE]  A,,2[A,CE]2 | A,,3[A,CE]  A,,2[A,CE]2 | E,,3[E,^G,B,] E,,2[E,^G,B,]2 |E,,3[E,^G,B,] E,,2[E,^G,B,]2 | A,,4  [A,CE]4- | [A,CE]8 |]
 V:3 accordionTab
 | z+z2 z-80.5 z-7'0.5 z-9 z->2 z-7'2 |: A-82 >-9 am-> A-7'2 am-82 | E+7 >+7' >+8 e+7 E+7' >+8 e+7 >+7' | E+7 >+7' >+8 e+7 E+7' >+8 e+6' >+7 | A-7 >-8' >-9 am-8 A-8' >-9 am-8 >-9 | A-8 >-8' >-9 am-8 A-8' >-9 am-7' >-8 |
 | E+7 >+[78] >+[78] e+[78] E+[>>] >+7 e+6' >+8 | E+7' >+8 >+6' e+7 E+7' >+8 e+6' >+7 |1 A-72 >-80.5 >-7'0.5 am-9 A->2 am-7'2 :|:2 A-7 >-[59] >-[59] am-[59] A-[59] >-[59] am-[59] >-[59] | A-[59] >-5 >-7 am-8 A-8' >-5 am-9 >-5 | E+7' >+4' >+8 e+4' E+7' >+4' e+8 >+4' |
 | E+7' >+4' >+8 e+4' E+7' >+4' e+8 >+4' | A-9 >-5 >-8 am-5 A-9 >-5 am-8 >-5 | A-9 >-5 >-8 am-5 A-9 >-5 am-8 >-5 | E+7'3 e+> E+z >+7 e+6' >+8 | E+7' >+8 >+6' e+7 E+7' >+8 e+6' >+7 :| z-7 z-9 z-7' z-8 z-6' z-7 z+5' z-6 |
 | z-4' z-5 z-3' z-4 z-5 z-3' z-4 z-2' | z-3 z-2' z-4 z-3' z-5 z-4' z-6 z+5' | z-7 z-6' z-8 z-7' z-9 z-7' z-8 z-6' | z-72 z-80.5 z-7'0.5 z-9 z->2 z-7'2 | A-82 >-9 am-> A-7'2 am-82 | E+7 >+7' >+8 e+7 E+7' >+8 e+7 >+7' | E+7 >+7' >+8 e+7 E+7' >+8 e+6' >+7 |
-| A-7 >-8' >-9 am-8 A-8' >-9 am-8 >-9 | A-8 >-8' >-9 am-8 A-8' >-9 am-7' >-8 | E+7 >+[78] >+[78] e+[78] E+[>>] >+7 e+6' >+8 | E+7' >+8 >+6' e+7 E+7' >+8 e+6' >+7 | A-74 am-[578]4 | >-[578]8 |]
+| A-7 >-8' >-9 am-8 A-8' >-9 am-8 >-9 | A-8 >-8' >-9 am-8 A-8' >-9 am-7' >-8 | E+7 >+[78] >+[78] e+[78] E+[>>] >+7 e+6' >+8 | E+7' >+8 >+6' e+7 E+7' >+8 e+6' >+7 | A-74 am-[578]4 | >-[>>>]8 |]
 X:1037
 %%barnumbers 0
 %%papersize A4
@@ -2404,29 +2544,63 @@ V:3 accordionTab
 | A-6'2 d-> A-> >-> d-6 A-7 >-6' | A-82 f-> A-> >-4' f-> E+z2 | (3::3 A-z2 >-4' f-> >-4'0.5 A->1.5 ) (3::4 >-5'1.5 f->0.5 >-4' A-> >-5 >-3' ) |
 |1 E+4'2 e+> E+>2 e+> E+>2 | (3::3 E+>2 >+4' e+> >+4'0.5 E+>1.5 ) (3::3 >+4'1.5 e+>0.5 >+8 E+> >+72 ) :|2 E+4'2 e+> E+>2 e+> E+>2 | E+>2 e+> E+>2 e+> E+>2 |
 X:1063
-%%barnumbers 0
+%%barnumbers 1
+%%pagenumbering
 %%papersize a4
 %tabinferenceopts -1
-%barsperstaff 9
+%%barsperstaff 9
 T:The Skye boat song 
-C:Folclore Escocês
+C:(Scotland)
 C:(Outlander Theme Song)
 Z:Flávio Vani
 N:Mapa para Acordeões Diatônicos powered by ABCXJS.
 M:3/4
-L:1/4
-Q:120
+L:1/8
+Q:60
 K:G
 V:1 treble
-| "G" D3/2 E/2 D | "Em" G2 G/2G/2 | "Am" A3/2 B/2 A | "D" d3 | "G" B3/2 A/2 B | "C" E2 E | "G" D3- | "D" D z2 |
-| "G" D3/2 E/2 D | "Em" G2 G      | "Am" A3/2 B/2 A | "D" d3 | "G" B3/2 A/2 B | "C" E2 E | "G" G3- |     G z2 +dacoda+ |
-|: "Em" B3/2 G/2 B | B3 | "Am" A3/2 E/2 A | A3 | "Em" G3/2 E/2 G | "C" G2 G  |1 "Em" E3- | E z2 :|2 "Em" E3 | "D" D3 +dcalcoda+ +coda+ |
-|: "Em" B3/2 G/2 B | B3 | "Am" A3/2 E/2 A | A3 | "Em" G3/2 E/2 G | "C" G2 G  |1 "Em" E3- | E z2 :|2  +fermata+ E3 |
+| "G" D>ED | "Em" G2G/G/ | "Am" A>BA | "D" d3 | "G" B>AB | "C" E2 E | "G" D3- | "D" D z2 |
+w:Speed bonnie * boat, like a bird on the wing, "Onward", * the sail-ors cry!
+w: . . . . . . . . . . . . . . . . .
+| "G" D>ED | "Em" G2G    | "Am" A>BA | "D" d3 | "G" B>AB | "C" E2 E | "G" G3- | G z2 +dacoda+ |
+w:Car-ry the lad that's born to be  king, over * the sea to Skye!
+w:. . . . . . . . . . . . . . . . .
+|: "Em" B>GB | B3 | "Am" A>EA | A3 | "Em" G>EG | "C" G2G |1 "Em" E3-| E z2 :|2 "Em" E3 | "D" D3 +dcalcoda+ +coda+ |
+w:Loud the~winds * howl, load the~waves * roar, Thun-derclaps * rend the air; . . . 
+w:Baffl-ed~our * foes stand on~the * shore, Follow they * will not . . da-re.
+|: "Em" B>GB | B3 | "Am" A>EA | A3 | "Em" G>EG | "C" G2G |1 "Em" E3-| E z2 :|2  +fermata+ E3 |
+W:
+W:The Skye boat song 
+W:
+W:Speed bonnie boat, like a bird on the wing,
+W:"Onward," the sailors cry!
+W:Carry the lad that's born to be king,
+W:over the sea to Skye!
+W:
+W:Loud the winds howl, load the waves roar,
+W:Thunderclaps rend the air;
+W:Baffled our foes stand on the shore,
+W:Follow they will not dare.
+W:
+W:Bold the waves leap, soft shall ye sleeep,
+W:Ocean's a royal bed,
+W:Rocked in the deep, Flora will keep
+W:Watch by your weary head.
+W:
+W:Many's the lad, fought on that day
+W:Well the claymore could wield
+W:When the night came, silently lay
+W:Dead on Culloden's field.
+W:
+W:Burned are our homes, exiled and dead
+W:Scattered the loyal men,
+W:Yet ere the sword cool in the sheat
+W:Charlie will come again
 V:2 bass
-| G,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] | A,, [A,CE] [A,CE] | D,, [D,F,A,] [D,F,A,] | G,, [G,B,D] [G,B,D] | C,, [C,E,G,] [C,E,G,] | G,, [G,B,D] [G,B,D] | D,, [D,F,A,] [D,F,A,] |
-| G,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] | A,, [A,CE] [A,CE] | D,, [D,F,A,] [D,F,A,] | G,, [G,B,D] [G,B,D] | C,, [C,E,G,] [C,E,G,] | G,, [G,B,D] [G,B,D] | G,, [G,B,D] [G,B,D] |
-|: E,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] | A,, [A,CE] [A,CE] | A,, [A,CE] [A,CE] |  E,, [G,B,D] [G,B,D] | C,, [C,E,G,] [C,E,G,] |1 E,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] :|2  E,, [G,B,D] [G,B,D] | D,, [D,F,A,] [D,F,A,] |
-|: E,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] | A,, [A,CE] [A,CE] | A,, [A,CE] [A,CE] |  E,, [G,B,D] [G,B,D] | C,, [C,E,G,] [C,E,G,] |1 E,, [G,B,D] [G,B,D] | E,, [G,B,D] [G,B,D] :|2  E,,3 |
+| G,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] | A,, [A,CE][A,CE] | D,, [D,F,A,][D,F,A,] | G,, [G,B,D][G,B,D] | C,, [C,E,G,][C,E,G,] | G,, [G,B,D][G,B,D] | D,, [D,F,A,][D,F,A,] |
+| G,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] | A,, [A,CE][A,CE] | D,, [D,F,A,][D,F,A,] | G,, [G,B,D][G,B,D] | C,, [C,E,G,][C,E,G,] | G,, [G,B,D][G,B,D] | G,, [G,B,D][G,B,D] |
+|: E,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] | A,, [A,CE][A,CE] | A,, [A,CE][A,CE] |  E,, [G,B,D][G,B,D] | C,, [C,E,G,][C,E,G,] |1 E,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] :|2  E,, [G,B,D][G,B,D] | D,, [D,F,A,][D,F,A,] |
+|: E,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] | A,, [A,CE][A,CE] | A,, [A,CE][A,CE] |  E,, [G,B,D][G,B,D] | C,, [C,E,G,][C,E,G,] |1 E,, [G,B,D][G,B,D] | E,, [G,B,D][G,B,D] :|2  E,,3 |
 V:3 accordionTab
 | G+5 g+>0.5 >+4'0.5 g+5 | E+5' g+> g+5'0.5 >+5'0.5 | A-7 am->0.5 >-6'0.5 am-7 | D-7' d-> d-> | G-6' g->0.5 >-70.5 g-6' | C+4' c+> c+4' | G-3' g-> g-> | D-> d-z d-z |
 | G+5 g+>0.5 >+4'0.5 g+5 | E+5' g+> g+5' | A-7 am->0.5 >-6'0.5 am-7 | D-7' d-> d-> | G-6' g->0.5 >-70.5 g-6' | C+4' c+> c+4' | G+5' g+> g+> | G+> g+z g+z |
