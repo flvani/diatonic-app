@@ -2,6 +2,8 @@ package br.com.diatonicmap.app
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.ParcelFileDescriptor
@@ -55,6 +57,20 @@ class DiatonicApp : AppCompatActivity() {
             CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
 
             webViewClient = object : WebViewClient() {
+                @Deprecated("Deprecated in Java")
+                override fun shouldOverrideUrlLoading(view: WebView?, url: String): Boolean {
+                    // Check your condition here
+                    if (! url.contains("https://appassets") ) {
+                        // Open URL in external browser
+                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        startActivity(browserIntent)
+                        // Return true to indicate you've handled the URL
+                        return true
+                    }
+                    // Return false to let the WebView handle the URL
+                    return false
+                }
+
                 override fun shouldInterceptRequest(
                     view: WebView,
                     request: WebResourceRequest
