@@ -17,3 +17,4 @@ local.properties
 /app/release
 /app/build
 /app/release/app-release.aab
+*.out
