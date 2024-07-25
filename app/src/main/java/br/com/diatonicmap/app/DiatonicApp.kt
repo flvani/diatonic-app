@@ -4,18 +4,16 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.ParcelFileDescriptor
 import android.print.*
-import android.util.DisplayMetrics
 import android.view.KeyEvent
 import android.view.View
 import android.view.Window.FEATURE_NO_TITLE
 import android.view.WindowManager
-import android.view.WindowMetrics
 import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +26,11 @@ class DiatonicApp : AppCompatActivity() {
     //private var pressedTime: Long = 0
 
     private var myUrl: String = "https://appassets.androidplatform.net/assets/app.html"
+
+    // Example usage:
+// val screenSize = getPhysicalScreenSize(context)
+// println("Screen width: ${screenSize.first} inches, Screen height: ${screenSize.second} inches")
+
 
     @SuppressLint("ClickableViewAccessibility", "SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,26 +94,21 @@ class DiatonicApp : AppCompatActivity() {
             }
         }
 
-        // Check the content width and height
         webView.post {
 
-            val contentWidth: Int
-            val contentHeight: Int
+            // Check the screen width and height
+            val width = this.resources.displayMetrics.widthPixels
+            val height = this.resources.displayMetrics.heightPixels
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
-                contentWidth = windowMetrics.bounds.width()
-                contentHeight = windowMetrics.bounds.height()
-            } else {
-                val displayMetrics = DisplayMetrics()
-                @Suppress("DEPRECATION")
-                windowManager.defaultDisplay.getMetrics(displayMetrics)
-                contentWidth = displayMetrics.widthPixels
-                contentHeight = displayMetrics.heightPixels
-            }
+            val orientation = getCurrentOrientation(this)
 
             // Check if content width is greater than content height
-            requestedOrientation = if (contentWidth > contentHeight) {
+            requestedOrientation = if
+                    (
+                        (orientation == Configuration.ORIENTATION_PORTRAIT && width < height )
+                        or
+                        (orientation != Configuration.ORIENTATION_PORTRAIT && width > height )
+                    ) {
                 // Landscape mode
                 ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
             } else {
@@ -175,6 +173,7 @@ override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
     @JavascriptInterface
     fun isDebug(): Boolean {
         return BuildConfig.DEBUG
+        //return true;
     }
 
     @JavascriptInterface
@@ -192,6 +191,23 @@ override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
             } else if (printJob.isFailed) {
                 Toast.makeText(applicationContext, R.string.print_failed, Toast.LENGTH_LONG).show()
             }
+        }
+    }
+}
+
+fun getCurrentOrientation(context: Context): Int {
+    return when (context.resources.configuration.orientation) {
+        Configuration.ORIENTATION_LANDSCAPE -> {
+            // Landscape
+            Configuration.ORIENTATION_LANDSCAPE
+        }
+        Configuration.ORIENTATION_PORTRAIT -> {
+            // Portrait
+            Configuration.ORIENTATION_PORTRAIT
+        }
+        else -> {
+            // Undefined, assuming Portrait
+            Configuration.ORIENTATION_PORTRAIT
         }
     }
 }
